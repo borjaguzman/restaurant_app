@@ -1,0 +1,25 @@
+<h1>Lista de Restaurantes que ofrecen <%= @item.name %></h1>
+
+<% if @restaurants.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.address %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No hay restaurantes que ofrezcan este plato.</p>
+<% end %>
+
+<%= link_to "Volver al Listado de Items", dishes_path, class: "btn btn-secondary" %>
+

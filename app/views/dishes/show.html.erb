@@ -1,0 +1,26 @@
+<h1>Lista de Items del Plato <%= @dish.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Restaurante</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+        
+        <td>
+          <%= link_to "Ver restaurantes", restaurants_path(item_id: item.id), class: "btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Volver a la lista de platos", dishes_path, class: "btn btn-secondary" %>
+

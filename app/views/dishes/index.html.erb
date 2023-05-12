@@ -1,0 +1,12 @@
+<h1>Lista de Platos</h1>
+
+<% @dishes.each do |dish| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= dish.name %></h5>
+      <%= link_to "Ver items", dish_path(dish), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "Volver a la página principal", root_path, class: "btn btn-secondary" %>

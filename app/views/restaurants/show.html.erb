@@ -1,0 +1,24 @@
+<h1><%= @restaurant.name %></h1>
+
+<h2>Items</h2>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= item.name %>
+      <%= item.price %>
+      <%= link_to "Ver restaurantes", restaurants_path(item_id: item), class: "btn btn-primary" %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Restaurantes que tienen <%= @item.name %></h2>
+
+<ul>
+  <% @item_restaurants.each do |restaurant| %>
+    <li>
+      <%= restaurant.name %>
+      <%= restaurant.address %>
+    </li>
+  <% end %>
+</ul>

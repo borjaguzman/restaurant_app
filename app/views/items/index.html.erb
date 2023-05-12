@@ -1,0 +1,23 @@
+<h1>Items del Restaurant <%= @restaurant.name %></h1>
+
+<div class="container ">
+  <div class="row ">
+    <% @items.each do |item| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text">Precio: <%= item.price %></p>
+            <p class="card-text">Calorías: <%= item.callories %></p>
+            <p class="card-text">Tipo de plato: <%= item.dish.name %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Volver a la página principal", root_path, class: "btn btn-primary" %>
+
+
+
